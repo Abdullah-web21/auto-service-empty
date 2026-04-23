@@ -1,0 +1,209 @@
+/* --- Global Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    background-color: #050505;
+    background-image: linear-gradient(rgba(5, 5, 5, 0.9), rgba(5, 5, 5, 0.85)), url(imgi_25_bg-01-1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: "Work Sans", sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* --- Navigation --- */
+.subnav {
+    background: #ff0000;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: black;
+    padding: 20px 5%;
+}
+
+nav img { width: 180px; height: auto; }
+
+ul#navLinks { display: flex; list-style: none; gap: 25px; align-items: center; }
+ul#navLinks a { text-decoration: none; color: white; font-family: "Space Grotesk", sans-serif; transition: 0.3s; }
+ul#navLinks a:hover { color: red; }
+
+#navBtn {
+    padding: 12px 24px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+header { padding: 100px 0; min-height: 600px; display: flex; align-items: center; }
+.text-sec { display: flex; flex-direction: column; gap: 20px; }
+.text-sec h1 { font-size: clamp(30px, 5vw, 50px); font-family: "Space Grotesk", sans-serif; text-transform: uppercase; max-width: 700px; }
+
+/* --- About Us --- */
+section.Aboutus { padding: 80px 0; }
+.aboutus { display: flex; gap: 50px; align-items: center; flex-wrap: wrap; }
+.col1 { flex: 1; min-width: 300px; position: relative; }
+.img1 img { width: 100%; border-radius: 10px; object-fit: cover; }
+.badge { position: absolute; bottom: 20px; left: -10px; background: red; padding: 20px; text-align: center; }
+
+.col2 { flex: 1.2; min-width: 300px; }
+.col2box { background: #232121; padding: 25px; margin: 20px 0; border-radius: 5px; }
+
+/* --- Services --- */
+.services { display: flex; gap: 30px; flex-wrap: wrap; }
+.servicecol2box { 
+    display: flex; gap: 20px; background: #232121; padding: 20px; 
+    align-items: center; border: 1px solid transparent; transition: 0.3s; 
+}
+.servicecol2box:hover { border-color: red; }
+
+/* --- BLOG SECTION (FIXED BOXES & BUTTONS) --- */
+section.Blogs { padding: 80px 0; }
+.blogss { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px; 
+}
+
+.bolgsimg { 
+    background: #212121; 
+    padding: 25px; 
+    display: flex; 
+    flex-direction: column; /* Content stack vertically */
+    height: 100%; /* All boxes equal height */
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+.bolgsimg:hover { border-color: red; }
+
+.bolgsimg img { 
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+    border-radius: 5px; 
+}
+
+.bolgsimg h3 { 
+    font-size: 20px; 
+    font-family: "Space Grotesk", sans-serif; 
+    margin: 15px 0; 
+    flex-grow: 1; /* This pushes the button to the bottom */
+    text-transform: uppercase;
+}
+
+/* Button Fixed */
+.blogsimgbtn { 
+    background: red; 
+    border: none; 
+    padding: 12px 24px; 
+    width: fit-content; 
+    cursor: pointer;
+    margin-top: auto; /* Safety push */
+}
+.blogsimgbtn a { text-decoration: none; color: white; font-size: 14px; text-transform: uppercase; font-weight: bold; }
+
+/* --- Footer --- */
+.footer { background: black; padding: 60px 0; border-top: 1px solid #333; }
+.footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+.footer-col a:hover { color: red; }
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    nav { flex-direction: column; gap: 15px; text-align: center; }
+    ul#navLinks { display: none; } /* Use JS for toggle */
+    
+    .text-sec h1, .servicecol1 h1, .ourcol2 h1, .blogstext h1 {
+        font-size: 28px !important;
+        width: 100% !important;
+    }
+
+    .badge { position: relative; left: 0; margin: 10px 0; width: 100%; }
+    
+    /* Buttons Full Width on Mobile */
+    .blogsimgbtn, .textbtn, .col2btn, #navBtn {
+        width: 100% !important;
+        margin: 10px 0 !important;
+        text-align: center;
+    }
+
+    .bolgsimg h3 { min-height: auto; }
+}
+ul#navLinks a {
+    text-decoration: none;
+    /* gap: 20px; */
+    color: white;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: "Space Grotesk", sans-serif;
+}
+ul#navLinks a:hover {
+    color: red;
+}
+button#navBtn a {
+    text-decoration: none;
+    color: white;
+    /* background: transparent; */
+}
+.footer-col ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+    /* font-family: "Work Sans", sans-serif; */
+}
+.footer-col li a:hover {
+    color: red;
+}
+button.startbtn {
+    margin: 25px;
+    height: 50px;
+    border: none;
+    background: red;
+        width: 203px;
+
+}
+button.startbtn a {
+    text-decoration: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 500;
+    font-family: "Work Sans", sans-serif;
+}
+button.blogbtn {
+    background: red;
+    height: 50px;
+    width: 181px;
+    border: none;
+}
+button.blogbtn a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 500;
+    font-family: "Work Sans", sans-serif;
+}
